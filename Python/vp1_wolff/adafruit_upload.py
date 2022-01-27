@@ -1,3 +1,6 @@
+# Benutzt die Adafruit_IO API (Rest), um pseudo-zufällige Zahlen zu generieren
+# Sorgt für einen realistischeren Verlauf, da immer nur 1°C Schritte möglich sind
+
 from Adafruit_IO import Client, Feed, Data
 import time as t
 import random as r
