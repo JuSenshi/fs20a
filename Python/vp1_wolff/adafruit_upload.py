@@ -2,8 +2,8 @@ from Adafruit_IO import Client, Feed, Data
 import time as t
 import random as r
 
-USERNAME = 'Ju_Senshi'
-KEY = 'aio_ZHsJ90asWJEWxnSzvUuGiwM4Gt5m'
+USERNAME = 'user'
+KEY = 'key'
 
 
 def dirtyZufallsgenerator(ausgangswert):

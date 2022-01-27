@@ -11,11 +11,11 @@ from Adafruit_IO import MQTTClient
 # Set to your Adafruit IO key.
 # Remember, your key is a secret,
 # so make sure not to publish it when you publish this code!
-ADAFRUIT_IO_KEY = 'aio_ZHsJ90asWJEWxnSzvUuGiwM4Gt5m'
+ADAFRUIT_IO_KEY = 'key'
 
 # Set to your Adafruit IO username.
 # (go to https://accounts.adafruit.com to find your username)
-ADAFRUIT_IO_USERNAME = 'Ju_Senshi'
+ADAFRUIT_IO_USERNAME = 'user'
 
 # Set to the ID of the feed to subscribe to for updates.
 FEED_ID = 'temperature'
