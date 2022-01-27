@@ -1,32 +1,49 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
-import pathlib
+import random as rdm
 import time
 
-hostName = "localhost"
-serverPort = 8080
+name = "localhost"
 
-datei = "<html><head><title>kacke</title></head><body>wasn bullshit</body></html>"
+while True:
+    f=open("index.html", "w")
 
-class MyServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        p = pathlib.Path().resolve()
-        print(p)
-        f = open(str(p) + self.path, 'r').read()
-        print(f)
-        self.wfile.write(bytes(f, "utf-8"))
+    temp1 = rdm.randrange(15, 25)
+    temp2 = rdm.randrange(15, 25)
+    temp3 = rdm.randrange(15, 25)
 
 
-if __name__ == "__main__":
-    webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Server started http://%s:%s" % (hostName, serverPort))
+    htmlcode="""
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Temperatur </title>
+        <style>
+            body{
+                background-color: #424242;
+                color: white;
+            }
+            #rainbow{
+                background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+                background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 10vw;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Temperaturmessung</h1>
+        <p>Auf dieser Webseite werden Temperaturen angezeigt.<br>
+        Ist das nicht cool?</p>
+        <ul>
+            <li>"""+str(temp1)+"""
+            <li>"""+str(temp2)+"""
+            <li>"""+str(temp3)+"""
+        </ul>
+        <p id="rainbow"> Over the rainbow</p>
+        <img src="cloudy.png">
+    </body>
+    </html>"""
 
-    try:
-        webServer.serve_forever()
-    except KeyboardInterrupt:
-        pass
-
-    webServer.server_close()
-    print("Server stopped.")
+    f.write(htmlcode)
+    f.close()
+    time.sleep(0.1)
