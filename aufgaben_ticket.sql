@@ -26,6 +26,10 @@ SELECT Ticketnummer FROM ticket WHERE Dringklichkeit = 1 or Dringklichkeit = 2;
 
 # Aufgabe 9
 SELECT Ticketnummer FROM ticket WHERE Dringklichkeit != 1;
+# ALTERNATIVE 1
+SELECT Ticketnummer FROM ticket WHERE NOT Dringklichkeit = 1;
+# ALTERNATIVE 2
+SELECT Ticketnummer FROM ticket WHERE Dringklichkeit <> 1;
 
 # Aufgabe 10
 SELECT Ticketnummer FROM ticket WHERE STATUS IS null;
