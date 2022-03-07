@@ -26,17 +26,13 @@ MQTT.disconnect() # optional
 from Adafruit_IO import Client
 import random as r
 
-USERNAME = 'user'
-KEY = 'key'
-
-aio = Client(USERNAME, KEY)
+aio = Client('user', 'key')  # Könnte man theoretisch kürzen und in Zeile 31 mergen
 random_value = r.randint(-50, 50)
-
 aio.send('zufall', random_value)
 
 
 # AUFGABE 3
-# a) py -m http.server
+# a) py -m http.server      # ALTERNATIV python / py3 oder so
 # b)
 import random as r
 wert = r.randint(16, 36)
