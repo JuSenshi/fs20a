@@ -72,7 +72,7 @@ Die aktuelle <strong> Temperatur im <i>Serverraum 1</i> beträgt: 26.5°C <br>
 import requests, re
 html = requests.get("http://localhost:8000/drei.html")
 temperaturen = []
-pattern = r"\d+ °C"
+pattern = r"\d+\.\d+ °C"
 for number in re.finditer(pattern, html.text):
     temperaturen.append(number.group().replace(" °C", ""))
 
