@@ -82,7 +82,18 @@ print("Avg:", sum(temperaturen)/len(temperaturen))
 
 # AUFGABE 5
 # b)
+# GEGEBEN:
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 for i in range(len(temperaturen)):
     if(temperaturen[i]) > 30:
-        print('\033[91m', "Serverraum", i+1, ":", temperaturen[i], "°C", '\033[0m')
+        print(bcolors.FAIL, "Serverraum", i+1, ":", temperaturen[i], "°C", bcolors.ENDC)
