@@ -44,7 +44,7 @@ wert = r.randint(16, 36)
 with open("index.html", "w") as datei:
     datei.write("""<html>
     <body>
-    """ + wert + """    
+    """ + wert + """ °C    
     </body>
     </html>
 """)
@@ -85,4 +85,4 @@ print("Avg:", sum(temperaturen)/len(temperaturen))
 
 for i in range(len(temperaturen)):
     if(temperaturen[i]) > 30:
-        print("Serverraum", i+1, ":", temperaturen[i], "°C")
+        print('\033[91m', "Serverraum", i+1, ":", temperaturen[i], "°C", '\033[0m')
