@@ -13,17 +13,17 @@
 # d) Der Client A sendet eine Disconnect-Nachricht an den Broker
 
 # AUFGABE 2 a)
-from Adafruit_IO import Client, MQTTClient
+from Adafruit_IO import MQTTClient
 
 Temperatur = 20  # GEGEBEN DURCH AUFGABENSTELLUNG
 
 MQTT = MQTTClient('name', 'key')
 MQTT.connect()
 MQTT.publish('ds18b20', Temperatur)
-MQTT.disconnect()
+MQTT.disconnect() # optional
 
 # AUFGABE 2 b)
-from Adafruit_IO import Client, Feed, Data
+from Adafruit_IO import Client
 import random as r
 
 USERNAME = 'user'
