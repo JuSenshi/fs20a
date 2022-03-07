@@ -59,7 +59,7 @@ with open("index.html", "w") as datei:
 <h1>Temperaturüberwachung im Serverraum</h1>
 Die aktuelle <strong> Temperatur im <i>Serverraum 1</i> beträgt: 26.5°C <br>
 <ul>
-<li>Max. temp: 30.9°C</li>
+<li>Max. Temp: 30.9°C</li>
 <li>Avg. Temp: 27.0°C</li>
 <li>Min. Temp: 24.1°C</li>
 <img src="server.jpg">
