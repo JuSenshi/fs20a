@@ -53,7 +53,8 @@ SELECT Dringklichkeit FROM ticket GROUP BY Dringklichkeit;
 SELECT COUNT(Ticketnummer) FROM ticket;
 
 # Aufgabe 17
-SELECT Ticketnummer, Erstellungsdatum FROM ticket WHERE Erstellungsdatum > '2022-01-10'
+SELECT Ticketnummer, Erstellungsdatum FROM ticket WHERE Erstellungsdatum > '2022-01-10';
 
 # Aufgabe 18
+SELECT Ticketnummer, Erstellungsdatum FROM ticket WHERE Erstellungsdatum > '2022-01-10' AND Erstellungsdatum < '2022-01-15';
 SELECT Ticketnummer, Erstellungsdatum FROM ticket WHERE Erstellungsdatum BETWEEN '2022-01-10' AND '2022-01-15';
