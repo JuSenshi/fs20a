@@ -55,7 +55,7 @@ with open("index.html", "w") as datei:
 <h1>Temperaturüberwachung im Serverraum</h1>
 Die aktuelle <strong> Temperatur im <i>Serverraum 1</i> beträgt: 26.5°C <br>
 <ul>
-<li>Max. temp: 30.9°C</li>
+<li>Max. Temp: 30.9°C</li>
 <li>Avg. Temp: 27.0°C</li>
 <li>Min. Temp: 24.1°C</li>
 <img src="server.jpg">
@@ -68,7 +68,7 @@ Die aktuelle <strong> Temperatur im <i>Serverraum 1</i> beträgt: 26.5°C <br>
 import requests, re
 html = requests.get("http://localhost:8000/drei.html")
 temperaturen = []
-pattern = r"\d+ °C"
+pattern = r"\d+\.\d+ °C"
 for number in re.finditer(pattern, html.text):
     temperaturen.append(number.group().replace(" °C", ""))
 
@@ -78,7 +78,18 @@ print("Avg:", sum(temperaturen)/len(temperaturen))
 
 # AUFGABE 5
 # b)
+# GEGEBEN:
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 for i in range(len(temperaturen)):
     if(temperaturen[i]) > 30:
-        print('\033[91m', "Serverraum", i+1, ":", temperaturen[i], "°C", '\033[0m')
+        print(bcolors.FAIL, "Serverraum", i+1, ":", temperaturen[i], "°C", bcolors.ENDC)
